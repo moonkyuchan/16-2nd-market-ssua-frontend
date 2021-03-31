@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
-// import Nav from "../../Components/Nav/Nav";
 
 const LoginBack = styled.div`
   width: 100vw;
@@ -93,12 +91,31 @@ const SignupButton = styled.button`
 `;
 
 const NewLogin = () => {
+  const [IdValue, setIdValue] = useState("");
+  const [PwValue, setPwValue] = useState("");
+
+  const onChangeId = (e) => {
+    setIdValue(e.target.value);
+  };
+
+  const onChangePw = (e) => {
+    setPwValue(e.target.value);
+  };
+
+  useEffect(() => {
+    console.log({ IdValue, PwValue });
+  });
+
   return (
     <>
       <LoginBack>
         <Title>로그인</Title>
-        <IdInput placeholder="아이디를 입력하시오." />
-        <PwInput placeholder="비밀번호를 입력하시오." />
+        <IdInput placeholder="아이디를 입력하시오." onChange={onChangeId} />
+        <PwInput
+          placeholder="비밀번호를 입력하시오."
+          type="password"
+          onChange={onChangePw}
+        />
         <Contents>
           <CheckWrap>
             <input type="checkbox" />

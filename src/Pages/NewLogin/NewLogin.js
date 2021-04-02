@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 const LoginBack = styled.div`
@@ -102,6 +103,12 @@ const NewLogin = () => {
     setPwValue(e.target.value);
   };
 
+  const history = useHistory();
+
+  const onClickSignup = () => {
+    history.push("/signup");
+  };
+
   useEffect(() => {
     console.log({ IdValue, PwValue });
   });
@@ -127,7 +134,7 @@ const NewLogin = () => {
           </FindWrap>
         </Contents>
         <LoginButton>로그인</LoginButton>
-        <SignupButton>회원가입</SignupButton>
+        <SignupButton onClick={onClickSignup}>회원가입</SignupButton>
       </LoginBack>
     </>
   );

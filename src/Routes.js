@@ -5,7 +5,8 @@ import Main from "./Pages/Main/Main";
 import Details from "./Pages/Details/Details";
 // import Login from "./Pages/Login/Login";
 import NewLogin from "./Pages/NewLogin/NewLogin";
-import Signup from "./Pages/Signup/Signup";
+// import Signup from "./Pages/Signup/Signup";
+import NewSignup from "./Pages/NewSignup/NewSignup";
 import Social from "./Pages/Social/Social";
 import List from "./Pages/List/List";
 import Cart from "./Pages/Cart/Cart";
@@ -21,7 +22,7 @@ class Routes extends React.Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/products/product-group/:id" component={Details} />
           <Route exact path="/login" component={NewLogin} />
-          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/signup" component={NewSignup} />
           <Route exact path="/social" component={Social} />
           <Route exact path="/list" component={List} />
           <Route exact path="/cart" component={Cart} />
